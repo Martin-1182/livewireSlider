@@ -1,5 +1,6 @@
 import noUiSlider from 'nouislider';
 import 'nouislider/dist/nouislider.css';
+import wNumb from 'wnumb';
 
 const CHANGE_EVENT = 'change';
 const EMPTY_MODIFER = 'empty';
