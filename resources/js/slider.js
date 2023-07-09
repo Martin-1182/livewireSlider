@@ -20,7 +20,12 @@ window.LivewireRangeSlider = function (data) {
                 return;
 
             noUiSlider.create(this.$refs.range, {
-                ...data.options
+                ...data.options,
+                format: wNumb({
+                    decimals: 2,
+                    thousand: ' ',
+                    suffix: ' €'
+                })
             })
 
             this.rangeSlider = this.$refs.range.noUiSlider;
