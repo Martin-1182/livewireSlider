@@ -2,19 +2,30 @@
 
 namespace LivewireSlider\LivewireSlider;
 
+use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\View;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use LivewireSlider\LivewireSlider\Commands\LivewireSliderCommand;
-
 class LivewireSliderServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
-        $package
+        /*$package
             ->name('livewireslider')
             ->hasViewComponent('slider', LivewireSlider::class)
             ->hasViewComposer('livewire-slider::components.scripts', function ($view) {
                 $view->jsPath = __DIR__ . '/../dist/slider.js';
-            });
+            });*/
+    }
+
+    public function bootingPackage()
+    {
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'livewire-slider');
+
+        Blade::component('range-slider', LivewireSlider::class);
+
+        View::composer('livewire-slider::components.scripts', function ($view) {
+            $view->jsPath = __DIR__.'/../dist/slider.js';
+        });
     }
 }
