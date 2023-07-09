@@ -10,12 +10,8 @@ class LivewireSliderServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
-        /*$package
-            ->name('livewireslider')
-            ->hasViewComponent('slider', LivewireSlider::class)
-            ->hasViewComposer('livewire-slider::components.scripts', function ($view) {
-                $view->jsPath = __DIR__ . '/../dist/slider.js';
-            });*/
+        $package
+            ->name('livewireslider');
     }
 
     public function bootingPackage()
