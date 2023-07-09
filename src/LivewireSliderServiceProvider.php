@@ -10,16 +10,11 @@ class LivewireSliderServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
-        /*
-         * This class is a Package Service Provider
-         *
-         * More info: https://github.com/spatie/laravel-package-tools
-         */
         $package
             ->name('livewireslider')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_livewireslider_table')
-            ->hasCommand(LivewireSliderCommand::class);
+            ->hasViewComponent('slider', LivewireSlider::class)
+            ->hasViewComposer('livewire-slider::components.scripts', function ($view) {
+                $view->jsPath = __DIR__ . '/../dist/slider.js';
+            });
     }
 }
