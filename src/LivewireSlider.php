@@ -23,7 +23,7 @@ class LivewireSlider extends Component
 
     public function render(): Application|Factory|View
     {
-        return view('livewire-slider::livewire-slider');
+        return view('livewire-slider::components.slider');
     }
 
     /**
