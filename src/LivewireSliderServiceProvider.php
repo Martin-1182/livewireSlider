@@ -14,11 +14,11 @@ class LivewireSliderServiceProvider extends PackageServiceProvider
             ->name('livewireslider');
     }
 
-    public function bootingPackage()
+    public function bootingPackage(): void
     {
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'livewire-slider');
 
-        Blade::component('range-slider', LivewireSlider::class);
+        Blade::component('slider', LivewireSlider::class);
 
         View::composer('livewire-slider::components.scripts', function ($view) {
             $view->jsPath = __DIR__.'/../dist/slider.js';
