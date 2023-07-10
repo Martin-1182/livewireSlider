@@ -9,8 +9,8 @@ xdebug_enabled: false
 additional_hostnames: []
 additional_fqdns: []
 database:
-  type: mariadb
-  version: "10.4"
+    type: mariadb
+    version: "10.4"
 nfs_mount_enabled: false
 mutagen_enabled: false
 use_dns_when_possible: true
@@ -54,7 +54,7 @@ nodejs_version: "16"
 # "ddev xhprof" to enable xhprof and "ddev xhprof off" to disable it work better,
 # as leaving xhprof enabled all the time is a big performance hit.
 
-# webserver_type: apache-fpm  # or apache-fpm
+# webserver_type: nginx-fpm  # or apache-fpm
 
 # timezone: Europe/Berlin
 # This is the timezone used in the containers and by PHP;
